@@ -1,0 +1,33 @@
+[user]
+	name = Patrick
+	email = patrick.lopdrup@gmail.com
+[core]
+	longpaths = true
+	editor = nvim
+[alias]
+	st = status
+    br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) %(color:blue)<%(authorname)>' --sort=-committerdate
+    bra = br --all
+	rb = rebase
+    rbc = rebase --continue
+	co = checkout
+	sw = switch
+    swc = switch -c
+	ci = commit
+	cim = commit -m
+	cam = !git add -A && git commit -m
+	cane = commit --amend --no-edit
+	ph = push
+	df = diff
+    dfs = diff --staged
+	pl = pull
+    pls = pull --recurse-submodules
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	ft = fetch
+	fta = fetch --all
+	rs = restore
+    rss = restore --staged
+    sl = stash list
+	edit = config --global --edit
+[push]
+	default = current
