@@ -17,7 +17,7 @@
           "properties": {
             "folder_icon": "\uf115",
             "folder_separator_icon": " ❯ ",
-            "max_depth": 2,
+            "max_depth": 5,
             "style": "agnoster_short"
           },
           "style": "plain",
