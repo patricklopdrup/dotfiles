@@ -25,27 +25,26 @@ scoop update *
 # Link the PowerShell profile
 ln --symbolic --force $HOME/.dotfiles/.pwsh_profile.ps1 $PROFILE
 
-# Set Windows Terminal settings
-ln --symbolic --force $HOME/.dotfiles/.terminal_config.json $HOME/scoop/persist/windows-terminal/settings/settings.json
-
+# Set Windows Terminal settings by copy over the existing one
+Copy-Item $HOME/.dotfiles/.terminal_config.json -Destination $HOME/scoop/persist/windows-terminal/settings/settings.json -Force
 
 
 # Should be last step!
 # Download fonts and open explorer to install
 mkdir fonts
-Invoke-WebRequest -Uri "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip" -OutFile fonts/FireCode.zip
-Expand-Archive fonts/FireCode.zip -DestinationPath fonts/FireCode
-rm fonts/FireCode.zip
-explorer .\fonts\FireCode\
+Invoke-WebRequest -Uri "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/FiraMono.zip" -OutFile fonts/FireMono.zip
+Expand-Archive fonts/FireMono.zip -DestinationPath fonts/FireMono
+rm fonts/FireMono.zip
+explorer .\fonts\FireMono\
 ```
 
 Fonts to be installed:
-- FireCodeNerdFontMono-Bold.ttf
-- FireCodeNerdFontMono-Light.ttf
-- FireCodeNerdFontMono-Medium.ttf
-- FireCodeNerdFontMono-Regular.ttf
-- FireCodeNerdFontMono-Retina.ttf
-- FireCodeNerdFontMono-SemiBold.ttf
+- FiraMonoNerdFontMono-Bold.ttf
+- FiraMonoNerdFontMono-Light.ttf
+- FiraMonoNerdFontMono-Medium.ttf
+- FiraMonoNerdFontMono-Regular.ttf
+- FiraMonoNerdFontMono-Retina.ttf
+- FiraMonoNerdFontMono-SemiBold.ttf
 
 Other fonts can be found here: [NerdFonts](https://www.nerdfonts.com/font-downloads)
 
