@@ -25,10 +25,11 @@ ln --symbolic --force $HOME/.dotfiles/.terminal_config.json $HOME/scoop/persist/
 
 # Should be last step!
 # Download fonts and open explorer to install
-Invoke-WebRequest -Uri "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip" -OutFile FireCode.zip
-Expand-Archive FireCode.zip -DestinationPath FireCode
-rm FireCode.zip
-explorer FireCode
+mkdir fonts
+Invoke-WebRequest -Uri "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip" -OutFile fonts/FireCode.zip
+Expand-Archive fonts/FireCode.zip -DestinationPath fonts/FireCode
+rm fonts/FireCode.zip
+explorer .\fonts\FireCode\
 ```
 
 Fonts to be installed:
