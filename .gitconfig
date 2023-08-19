@@ -1,6 +1,5 @@
-[user]
-	name = Patrick
-	email = patrick.lopdrup@gmail.com
+[include]
+    path = ~/.dotfiles/secrets/.gituser
 [core]
 	longpaths = true
 	editor = nvim
