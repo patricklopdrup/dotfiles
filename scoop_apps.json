@@ -48,6 +48,13 @@
             "Version": "8.7.0"
         },
         {
+            "Name": "firefox",
+            "Updated": "2023-08-19T16:54:40.5235728+02:00",
+            "Info": "",
+            "Source": "extras",
+            "Version": "116.0.3"
+        },
+        {
             "Updated": "2022-10-27T14:35:54.5393016+02:00",
             "Name": "gcc",
             "Source": "main",
@@ -123,6 +130,13 @@
             "Source": "main",
             "Info": "",
             "Version": "18.3.4"
+        },
+        {
+            "Name": "paint.net",
+            "Updated": "2023-08-19T16:57:33.6303966+02:00",
+            "Info": "",
+            "Source": "extras",
+            "Version": "5.0.9"
         },
         {
             "Updated": "2023-08-19T01:04:15.7170246+02:00",
