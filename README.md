@@ -28,6 +28,9 @@ New-Item -ItemType SymbolicLink -Path $PROFILE -Target "$HOME/.dotfiles/powershe
 # Set Windows Terminal settings by copy over the existing one
 Copy-Item $HOME/.dotfiles/powershell/.terminal_config.json -Destination $HOME/scoop/persist/windows-terminal/settings/settings.json -Force
 
+# nvim symbolic link to folder
+New-Item -ItemType SymbolicLink -Path "$HOME/AppData/Local/nvim/" -Target "$HOME/.dotfiles/nvim/" -Force
+
 
 # Should be last step!
 # Download fonts and open explorer to install
@@ -49,7 +52,6 @@ Fonts to be installed:
 Other fonts can be found here: [NerdFonts](https://www.nerdfonts.com/font-downloads)
 
 ## TODOs
-- nvim config
 - .ideavim config
 - vscode vim config
 - check that oh-my-posh works with .mytheme.omp.json
