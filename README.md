@@ -9,7 +9,7 @@ scoop install git
 # Go to HOME dir, clone dotfiles, and link global .gitconfig
 cd ~/
 git clone https://github.com/patricklopdrup/dotfiles.git ~/.dotfiles
-ln --symbolic --force $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
+New-Item -ItemType SymbolicLink -Path $HOME/.gitconfig -Target "$HOME/.dotfiles/git/.gitconfig" -Force
 
 # Add git name and email to seperate file
 New-Item -Path "$HOME/.dotfiles/secrets/.gituser" -Value "[user]`n" -Force
@@ -19,14 +19,14 @@ Add-Content -Path "$HOME/.dotfiles/secrets/.gituser" "`tname = $name"
 Add-Content -Path "$HOME/.dotfiles/secrets/.gituser" "`temail = $email"
 
 # Install all scoop apps and update to latest
-scoop import $HOME/.dotfiles/scoop_apps.json
+scoop import $HOME/.dotfiles/scoop/scoop_apps.json
 scoop update *
 
 # Link the PowerShell profile
-ln --symbolic --force $HOME/.dotfiles/.pwsh_profile.ps1 $PROFILE
+New-Item -ItemType SymbolicLink -Path $PROFILE -Target "$HOME/.dotfiles/powershell/.pwsh_profile.ps1" -Force
 
 # Set Windows Terminal settings by copy over the existing one
-Copy-Item $HOME/.dotfiles/.terminal_config.json -Destination $HOME/scoop/persist/windows-terminal/settings/settings.json -Force
+Copy-Item $HOME/.dotfiles/powershell/.terminal_config.json -Destination $HOME/scoop/persist/windows-terminal/settings/settings.json -Force
 
 
 # Should be last step!

@@ -19,4 +19,4 @@ Set-PSReadLineKeyHandler -Chord Ctrl+o -ScriptBlock {
 Import-Module posh-git
 
 # Example of path to default theme: $env:POSH_THEMES_PATH/star.omp.json
-oh-my-posh init pwsh --config "~/.dotfiles/.mytheme.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "~/.dotfiles/powershell/.mytheme.omp.json" | Invoke-Expression
