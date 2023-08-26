@@ -11,6 +11,10 @@ cd ~/
 git clone https://github.com/patricklopdrup/dotfiles.git ~/.dotfiles
 New-Item -ItemType SymbolicLink -Path $HOME/.gitconfig -Target "$HOME/.dotfiles/git/.gitconfig" -Force
 
+# Make dev folder if it does not exist
+$devExist = Test-Path $HOME/dev
+if (-not $devExist) {mkdir $HOME/dev}
+
 # Add git name and email to seperate file
 New-Item -Path "$HOME/.dotfiles/secrets/.gituser" -Value "[user]`n" -Force
 $name = Read-Host -Prompt "git username"
