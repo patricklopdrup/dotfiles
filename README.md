@@ -1,6 +1,6 @@
 # dotfiles
 
-## Install via PowerShell as admin on Windows
+## Run via normal PowerShell
 ```
 # Install scoop and Git
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
@@ -8,7 +8,10 @@ irm get.scoop.sh | iex
 scoop install git
 
 git clone https://github.com/patricklopdrup/dotfiles.git $HOME/.dotfiles
+```
 
+## Install via Admin PowerShell
+```
 & $HOME/.dotfiles/setupScripts/Setup-All.ps1
 ```
 
