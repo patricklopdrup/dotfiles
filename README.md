@@ -9,7 +9,7 @@ scoop install git
 
 git clone https://github.com/patricklopdrup/dotfiles.git $HOME/.dotfiles
 
-$HOME/.dotfiles/setupScripts/Setup-All.ps1
+& $HOME/.dotfiles/setupScripts/Setup-All.ps1
 ```
 
 Fonts to be installed:
