@@ -3,6 +3,7 @@
 ## Install via PowerShell as admin on Windows
 ```
 # Install scoop and Git
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 irm get.scoop.sh | iex
 scoop install git
 
