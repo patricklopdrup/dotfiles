@@ -7,14 +7,9 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 irm get.scoop.sh | iex
 scoop install git
 
-git clone https://github.com/patricklopdrup/dotfiles.git $HOME\.dotfiles
+git clone https://github.com/patricklopdrup/dotfiles.git $HOME/.dotfiles
 
-$HOME\.dotfiles\setupScripts\Setup-Git.ps1
-$HOME\.dotfiles\setupScripts\Setup-Scoop.ps1
-$HOME\.dotfiles\setupScripts\Setup-Nvim.ps1
-$HOME\.dotfiles\setupScripts\Setup-PowerShell.ps1
-$HOME\.dotfiles\setupScripts\Setup-Terminal.ps1
-$HOME\.dotfiles\setupScripts\Setup-Misc.ps1
+$HOME/.dotfiles/setupScripts/Setup-All.ps1
 ```
 
 Fonts to be installed:
