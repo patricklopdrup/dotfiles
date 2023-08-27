@@ -6,43 +6,14 @@
 irm get.scoop.sh | iex
 scoop install git
 
-# Go to HOME dir, clone dotfiles, and link global .gitconfig
-cd ~/
 git clone https://github.com/patricklopdrup/dotfiles.git ~/.dotfiles
-New-Item -ItemType SymbolicLink -Path $HOME/.gitconfig -Target "$HOME/.dotfiles/git/.gitconfig" -Force
 
-# Make dev folder if it does not exist
-$devExist = Test-Path $HOME/dev
-if (-not $devExist) {mkdir $HOME/dev}
-
-# Add git name and email to seperate file
-New-Item -Path "$HOME/.dotfiles/secrets/.gituser" -Value "[user]`n" -Force
-$name = Read-Host -Prompt "git username"
-$email = Read-Host -Prompt "git email"
-Add-Content -Path "$HOME/.dotfiles/secrets/.gituser" "`tname = $name"
-Add-Content -Path "$HOME/.dotfiles/secrets/.gituser" "`temail = $email"
-
-# Install all scoop apps and update to latest
-scoop import $HOME/.dotfiles/scoop/scoop_apps.json
-scoop update *
-
-# Link the PowerShell profile
-New-Item -ItemType SymbolicLink -Path $PROFILE -Target "$HOME/.dotfiles/powershell/.pwsh_profile.ps1" -Force
-
-# Set Windows Terminal settings by copy over the existing one
-Copy-Item $HOME/.dotfiles/powershell/.terminal_config.json -Destination $HOME/scoop/persist/windows-terminal/settings/settings.json -Force
-
-# nvim symbolic link to folder
-New-Item -ItemType SymbolicLink -Path "$HOME/AppData/Local/nvim/" -Target "$HOME/.dotfiles/nvim/" -Force
-
-
-# Should be last step!
-# Download fonts and open explorer to install
-mkdir fonts
-Invoke-WebRequest -Uri "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/FiraMono.zip" -OutFile fonts/FireMono.zip
-Expand-Archive fonts/FireMono.zip -DestinationPath fonts/FireMono
-rm fonts/FireMono.zip
-explorer .\fonts\FireMono\
+$HOME/.dotfiles/setupScripts/Setup-Git.ps1
+$HOME/.dotfiles/setupScripts/Setup-Scoop.ps1
+$HOME/.dotfiles/setupScripts/Setup-Nvim.ps1
+$HOME/.dotfiles/setupScripts/Setup-PowerShell.ps1
+$HOME/.dotfiles/setupScripts/Setup-Terminal.ps1
+$HOME/.dotfiles/setupScripts/Setup-Misc.ps1
 ```
 
 Fonts to be installed:
@@ -58,5 +29,3 @@ Other fonts can be found here: [NerdFonts](https://www.nerdfonts.com/font-downlo
 ## TODOs
 - .ideavim config
 - vscode vim config
-- check that oh-my-posh works with .mytheme.omp.json
-- make this into a single script

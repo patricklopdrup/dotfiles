@@ -1,35 +1,35 @@
 [include]
     path = ~/.dotfiles/secrets/.gituser
 [core]
-	longpaths = true
-	editor = nvim
-	autocrlf = true
+    longpaths = true
+    editor = nvim
+    autocrlf = true
 [alias]
-	st = status
+    st = status
     br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) %(color:blue)<%(authorname)>' --sort=-committerdate
     bra = br --all
-	rb = rebase
+    rb = rebase
     rbc = rebase --continue
-	co = checkout
-	sw = switch
+    co = checkout
+    sw = switch
     swc = switch -c
-	ci = commit
-	cim = commit -m
-	cam = !git add -A && git commit -m
-	cane = commit --amend --no-edit
-	ph = push
-	df = diff
+    ci = commit
+    cim = commit -m
+    cam = !git add -A && git commit -m
+    cane = commit --amend --no-edit
+    ph = push
+    df = diff
     dfs = diff --staged
-	pl = pull
+    pl = pull
     pls = pull --recurse-submodules
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	ft = fetch
-	fta = fetch --all
-	rs = restore
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    ft = fetch
+    fta = fetch --all
+    rs = restore
     rss = restore --staged
     sl = stash list
-	edit = config --global --edit
+    edit = config --global --edit
 [push]
-	default = current
+    default = current
 [credential "helperselector"]
-	selected = wincred
+    selected = wincred
