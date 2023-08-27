@@ -16,6 +16,7 @@ scoop update *
 New-Item -ItemType SymbolicLink -Path "$HOME/AppData/Local/nvim/" -Target "$HOME/.dotfiles/nvim/" -Force
 
 # Link PowerShell profile
+# Has to be run from pwsh because $HOME is in another location...
 New-Item -ItemType SymbolicLink -Path $PROFILE -Target "$HOME/.dotfiles/powershell/.pwsh_profile.ps1" -Force
 
 # Replace Windows Terminal settings.json file
@@ -25,9 +26,13 @@ Copy-Item $HOME/.dotfiles/powershell/.terminal_config.json -Destination $HOME/sc
 $devExist = Test-Path $HOME/dev
 if (-not $devExist) {mkdir $HOME/dev}
 
+# Used for some vim lsp
+nvm install latest
+nvm use latest
+
 # Download fonts and open explorer to install
-mkdir fonts
-Invoke-WebRequest -Uri "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/FiraMono.zip" -OutFile fonts/FireMono.zip
-Expand-Archive fonts/FireMono.zip -DestinationPath fonts/FireMono
-rm fonts/FireMono.zip
-explorer .\fonts\FireMono\
+mkdir $HOME/.dotfiles/fonts
+Invoke-WebRequest -Uri "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/FiraMono.zip" -OutFile $HOME/.dotfiles/fonts/FireMono.zip
+Expand-Archive $HOME/.dotfiles/fonts/FireMono.zip -DestinationPath $HOME/.dotfiles/fonts/FireMono
+rm $HOME/.dotfiles/fonts/FireMono.zip
+explorer $HOME\.dotfiles\fonts\FireMono\
