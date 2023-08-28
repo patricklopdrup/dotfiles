@@ -1,7 +1,7 @@
 Function vimhome {Set-Location -Path $HOME\AppData\Local\nvim }
 Function viminit {nvim $HOME\AppData\Local\nvim\init.vim }
 Function set-helix {helix $HOME\AppData\Roaming\helix\config.toml}
-Function dev {Set-Location -Path C:\dev }
+Function dev {Set-Location -Path $HOME/dev }
 
 Set-Alias -Name vim -Value nvim
 
