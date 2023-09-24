@@ -29,6 +29,17 @@
     rss = restore --staged
     sl = stash list
     edit = config --global --edit
+[pager]
+	branch = false
+	diff = delta
+	log = delta
+	reflog = delta
+	show = delta
+[delta]
+	line-numbers = true
+	minus-style = red
+	plus-style = green
+	side-by-side = false
 [push]
     default = current
 [credential "helperselector"]
