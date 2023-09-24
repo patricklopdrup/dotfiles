@@ -6,6 +6,7 @@
     autocrlf = true
 [alias]
     st = status
+    ap = add -p
     br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) %(color:blue)<%(authorname)>' --sort=-committerdate
     bra = br --all
     rb = rebase
@@ -40,6 +41,7 @@
 	minus-style = red
 	plus-style = green
 	side-by-side = false
+    zero-style = omit
 [push]
     default = current
 [credential "helperselector"]
