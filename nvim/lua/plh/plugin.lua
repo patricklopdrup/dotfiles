@@ -99,7 +99,6 @@ require("lazy").setup({
     "simrat39/rust-tools.nvim",
     -- debug
     "mfussenegger/nvim-dap",
-    "puremourning/vimspector",
 
     -- Git
     {

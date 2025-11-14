@@ -3,14 +3,14 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-    "tsserver",
+    "ts_ls",
     "eslint",
     "lua_ls",
     "rust_analyzer",
 })
 
 -- Fix Undefined global 'vim'
-lsp.configure('lua-language-server', {
+lsp.configure('lua-ls', {
     settings = {
         Lua = {
             diagnostics = {
@@ -56,14 +56,13 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("n", "gl", function() vim.diagnostic.open_float() end, opts)
-    vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.sifnature_help() end, opts)
+    vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
 lsp.setup()
 
 vim.diagnostic.config({
     virtual_text = {
-        true,
         severity = { min = vim.diagnostic.severity.ERROR }
     }
     
